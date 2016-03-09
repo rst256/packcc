@@ -1,0 +1,107 @@
+int main(int argc, char **argv) {
+static void print_usage(FILE *output) {
+static void print_version(FILE *output) {
+static bool_t generate(context_t *ctx) {
+static code_reach_t generate_code(generate_t *gen, const node_t *node, int onfail, int indent, bool_t bare) {
+code_reach_t generate_thunking_error_code(
+    generate_t *gen, const node_t *expr, int index, const node_const_array_t *vars, const node_const_array_t *capts, int onfail, int indent, bool_t bare
+) {
+code_reach_t generate_thunking_action_code(
+    generate_t *gen, int index, const node_const_array_t *vars, const node_const_array_t *capts, bool_t error, int onfail, int indent, bool_t bare
+) {
+static code_reach_t generate_expanding_code(generate_t *gen, int index, int onfail, int indent, bool_t bare) {
+static code_reach_t generate_capturing_code(generate_t *gen, const node_t *expr, int index, int onfail, int indent, bool_t bare) {
+static code_reach_t generate_alternative_code(generate_t *gen, const node_array_t *nodes, int onfail, int indent, bool_t bare) {
+static code_reach_t generate_sequential_code(generate_t *gen, const node_array_t *nodes, int onfail, int indent, bool_t bare) {
+static code_reach_t generate_predicating_code(generate_t *gen, const node_t *expr, bool_t neg, int onfail, int indent, bool_t bare) {
+static code_reach_t generate_quantifying_code(generate_t *gen, const node_t *expr, int min, int max, int onfail, int indent, bool_t bare) {
+static code_reach_t generate_matching_charclass_code(generate_t *gen, const char *value, int onfail, int indent, bool_t bare) {
+static code_reach_t generate_matching_string_code(generate_t *gen, const char *value, int onfail, int indent, bool_t bare) {
+static bool_t parse(context_t *ctx) {
+static bool_t parse_directive_string_(context_t *ctx, const char *name, char **output, string_flag_t mode) {
+static bool_t parse_directive_include_(context_t *ctx, const char *name, FILE *output1, FILE *output2) {
+static void dump_options(context_t *ctx) {
+static const char *get_prefix(context_t *ctx) {
+static const char *get_auxil_type(context_t *ctx) {
+static const char *get_value_type(context_t *ctx) {
+static node_t *parse_rule(context_t *ctx) {
+static node_t *parse_expression(context_t *ctx, node_t *rule) {
+static node_t *parse_sequence(context_t *ctx, node_t *rule) {
+static node_t *parse_term(context_t *ctx, node_t *rule) {
+static node_t *parse_primary(context_t *ctx, node_t *rule) {
+static bool_t match_footer_start(context_t *ctx) {
+static bool_t match_code_block(context_t *ctx) {
+static bool_t match_identifier(context_t *ctx) {
+static bool_t match_number(context_t *ctx) {
+static bool_t match_spaces(context_t *ctx) {
+static bool_t match_character_class(context_t *ctx) {
+static bool_t match_quotation_double(context_t *ctx) {
+static bool_t match_quotation_single(context_t *ctx) {
+static bool_t match_comment_cxx(context_t *ctx) {
+static bool_t match_comment_c(context_t *ctx) {
+static bool_t match_comment(context_t *ctx) {
+static bool_t match_directive_c(context_t *ctx) {
+static bool_t match_quotation_(context_t *ctx, const char *left, const char *right, const char *name) {
+static bool_t match_section_block_(context_t *ctx, const char *left, const char *right, const char *name) {
+static bool_t match_section_line_continuable_(context_t *ctx, const char *head) {
+static bool_t match_section_line_(context_t *ctx, const char *head) {
+static bool_t match_blank(context_t *ctx) {
+static bool_t match_string(context_t *ctx, const char *str) {
+static bool_t match_character_any(context_t *ctx) {
+static bool_t match_character_range(context_t *ctx, char min, char max) {
+static bool_t match_character(context_t *ctx, char ch) {
+static bool_t match_eol(context_t *ctx) {
+static bool_t match_eof(context_t *ctx) {
+static void commit_buffer(context_t *ctx) {
+static int refill_buffer(context_t *ctx, int num) {
+static void dump_node(context_t *ctx, const node_t *node) {
+static void verify_captures(context_t *ctx, node_t *node, node_const_array_t *capts) {
+static void verify_variables(context_t *ctx, node_t *node,
+        node_const_array_t *vars) {
+static void link_references(context_t *ctx, node_t *node) {
+static const node_t *lookup_rulehash(const context_t *ctx, const char *name) {
+static void make_rulehash(context_t *ctx) {
+static void destroy_context(context_t *ctx) {
+static void destroy_node(node_t *node) {
+static node_t *create_node(node_type_t type) {
+static context_t *create_context(const char *iname, const char *oname,
+    bool_t debug) {
+static void node_const_array__term(node_const_array_t *array) {
+static void node_const_array__copy(node_const_array_t *array,
+    const node_const_array_t *src) {
+static void node_const_array__clear(node_const_array_t *array) {
+static void node_const_array__add(node_const_array_t *array, const node_t *node) {
+static void node_const_array__init(node_const_array_t *array, int max) {
+static void node_array__term(node_array_t *array) {
+static void node_array__add(node_array_t *array, node_t *node) {
+static void node_array__init(node_array_t *array, int max) {
+static void char_array__term(char_array_t *array) {
+static void char_array__add(char_array_t *array, char ch) {
+static void char_array__init(char_array_t *array, int max) {
+static int populate_bits(int x) {
+static int hash_string(const char *str) {
+static char *add_fileext(const char *path, const char *ext) {
+static char *replace_fileext(const char *path, const char *ext) {
+static const char *extract_fileext(const char *path) {
+static const char *extract_filename(const char *path) {
+static void write_code_block(FILE *stream, const char *ptr, size_t len,
+    int indent) {
+static void write_text(FILE *stream, const char *ptr, size_t len) {
+static void write_characters(FILE *stream, char ch, size_t len) {
+static void make_header_identifier(char *str) {
+static void remove_trailing_blank(char *str) {
+static void remove_heading_blank(char *str) {
+static const char *escape_character(char ch, char (*buf)[5]) {
+static bool_t unescape_string(char *str) {
+static bool_t is_pointer_type(const char *str) {
+static bool_t is_identifier_string(const char *str) {
+static bool_t is_filled_string(const char *str) {
+static char *strndup_e(const char *str, size_t len) {
+static char *strdup_e(const char *str) {
+static void *realloc_e(void *ptr, size_t size) {
+static void *malloc_e(size_t size) {
+static FILE *fopen_wt_e(const char *path) {
+static FILE *fopen_rb_e(const char *path) {
+static int print_error(const char *format, ...) {
+
+
